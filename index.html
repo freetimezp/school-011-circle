@@ -1,18 +1,374 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="theme-color" content="#f2eafe" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Project</title>
-</head>
+        <meta
+            name="description"
+            content="Learn how to create circular avatars with CSS border-radius, overflow and object-fit."
+        />
 
-<body>
-    start
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <script src="./assets/js/main.js"></script>
-</body>
+        <link
+            href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+            rel="stylesheet"
+        />
 
+        <link rel="stylesheet" href="./assets/css/style.css" />
+
+        <title>011 — Circular Avatar | Circle Studio</title>
+    </head>
+
+    <body>
+        <!--=============== PAGE LOADER ===============-->
+        <div class="loader" id="loader" aria-hidden="true">
+            <span class="loader-circle"></span>
+            <span class="loader-label">CIRCLE STUDIO</span>
+        </div>
+
+        <!--=============== HEADER ===============-->
+        <header class="header" id="header">
+            <a href="#" class="logo" aria-label="Circle Studio home">
+                <span class="logo-mark">C</span>
+                <span class="logo-text">circle studio</span>
+            </a>
+
+            <nav class="nav" aria-label="Main navigation">
+                <a href="#intro" class="nav-link active">Overview</a>
+                <a href="#lesson" class="nav-link">Lesson</a>
+                <a href="#playground" class="nav-link">Playground</a>
+                <a href="#practice" class="nav-link">Practice</a>
+            </nav>
+
+            <a href="#practice" class="header-action">
+                Start learning
+                <span aria-hidden="true">↗</span>
+            </a>
+
+            <button
+                class="menu-toggle"
+                id="menu-toggle"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="mobile-nav"
+            >
+                <span></span>
+                <span></span>
+            </button>
+        </header>
+
+        <!--=============== MOBILE NAV ===============-->
+        <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+            <a href="#intro">Overview <span>01</span></a>
+            <a href="#lesson">Lesson <span>02</span></a>
+            <a href="#playground">Playground <span>03</span></a>
+            <a href="#practice">Practice <span>04</span></a>
+        </nav>
+
+        <main>
+            <!--=============== HERO ===============-->
+            <section class="hero" id="intro">
+                <div class="hero-content">
+                    <div class="eyebrow">
+                        <span class="eyebrow-dot"></span>
+                        FRONTEND FUNDAMENTALS
+                        <span class="eyebrow-number">LESSON 011</span>
+                    </div>
+
+                    <h1>
+                        Make it
+                        <span class="heading-accent">personal.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        A little circle can make a big difference. Learn how to
+                        shape images, crop portraits and create beautiful
+                        profile avatars with CSS.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#lesson" class="button button-primary">
+                            Explore the lesson
+                            <span aria-hidden="true">↗</span>
+                        </a>
+
+                        <span class="reading-time">
+                            <span aria-hidden="true">◷</span>
+                            8 min learning
+                        </span>
+                    </div>
+
+                    <div class="hero-bottom">
+                        <span>HTML + CSS</span>
+                        <span>01 / 10</span>
+                    </div>
+                </div>
+
+                <div class="hero-visual" aria-label="Circular avatar examples">
+                    <div class="visual-orbit orbit-one"></div>
+                    <div class="visual-orbit orbit-two"></div>
+
+                    <div class="avatar-card avatar-card-main">
+                        <div class="avatar-image avatar-large">
+                            <img
+                                src="./assets/images/avatar-01.jpg"
+                                alt="Portrait example with a circular crop"
+                            />
+                        </div>
+
+                        <div class="avatar-card-info">
+                            <span class="avatar-name">Alex Morgan</span>
+                            <span class="avatar-role">Creative designer</span>
+                        </div>
+
+                        <span class="avatar-status"></span>
+                    </div>
+
+                    <div class="floating-avatar floating-avatar-one">
+                        <img src="./assets/images/avatar-02.jpg" alt="" />
+                    </div>
+
+                    <div class="floating-avatar floating-avatar-two">
+                        <img src="./assets/images/avatar-03.jpg" alt="" />
+                    </div>
+
+                    <span class="visual-note note-top">border-radius: 50%</span>
+                    <span class="visual-note note-bottom"
+                        >object-fit: cover</span
+                    >
+                </div>
+            </section>
+
+            <!--=============== LESSON INTRO ===============-->
+            <section class="section lesson-section" id="lesson">
+                <div class="section-heading">
+                    <div>
+                        <span class="section-label">01 — THE BASICS</span>
+                        <h2>Small shape.<br /><em>Big personality.</em></h2>
+                    </div>
+
+                    <p>
+                        Avatars are everywhere — social profiles, comments,
+                        dashboards and messaging apps. Let's understand the CSS
+                        behind them.
+                    </p>
+                </div>
+
+                <div class="lesson-grid">
+                    <article class="lesson-card">
+                        <span class="card-number">01</span>
+                        <div class="lesson-symbol symbol-circle"></div>
+                        <h3>Border radius</h3>
+                        <p>
+                            Turn a square image into a circle using the
+                            border-radius property.
+                        </p>
+                        <code>border-radius: 50%;</code>
+                    </article>
+
+                    <article class="lesson-card">
+                        <span class="card-number">02</span>
+                        <div class="lesson-symbol symbol-crop"></div>
+                        <h3>Image cropping</h3>
+                        <p>
+                            Control how an image fills its container without
+                            stretching its proportions.
+                        </p>
+                        <code>object-fit: cover;</code>
+                    </article>
+
+                    <article class="lesson-card">
+                        <span class="card-number">03</span>
+                        <div class="lesson-symbol symbol-position"></div>
+                        <h3>Image position</h3>
+                        <p>
+                            Move the visible image area to find the best
+                            portrait composition.
+                        </p>
+                        <code>object-position: center;</code>
+                    </article>
+                </div>
+            </section>
+
+            <!--=============== PLAYGROUND ===============-->
+            <section class="section playground-section" id="playground">
+                <div class="section-heading">
+                    <div>
+                        <span class="section-label">02 — EXPERIMENT</span>
+                        <h2>Shape your<br /><em>own avatar.</em></h2>
+                    </div>
+
+                    <p>
+                        Change the shape, size and crop. See how small CSS
+                        changes transform the same image.
+                    </p>
+                </div>
+
+                <div class="playground">
+                    <div class="playground-preview">
+                        <span class="preview-label">LIVE PREVIEW</span>
+
+                        <div class="preview-stage">
+                            <div class="preview-avatar" id="preview-avatar">
+                                <img
+                                    src="./assets/images/avatar-01.jpg"
+                                    alt="Live avatar preview"
+                                    id="preview-image"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="preview-caption">
+                            <span id="preview-shape">CIRCLE</span>
+                            <span id="preview-size">160 × 160</span>
+                        </div>
+                    </div>
+
+                    <div class="playground-controls">
+                        <div class="control-group">
+                            <label>Choose a shape</label>
+
+                            <div class="shape-options">
+                                <button
+                                    class="shape-option active"
+                                    data-shape="circle"
+                                    aria-pressed="true"
+                                >
+                                    <span
+                                        class="shape-icon shape-icon-circle"
+                                    ></span>
+                                    Circle
+                                </button>
+
+                                <button
+                                    class="shape-option"
+                                    data-shape="rounded"
+                                    aria-pressed="false"
+                                >
+                                    <span
+                                        class="shape-icon shape-icon-rounded"
+                                    ></span>
+                                    Rounded
+                                </button>
+
+                                <button
+                                    class="shape-option"
+                                    data-shape="square"
+                                    aria-pressed="false"
+                                >
+                                    <span
+                                        class="shape-icon shape-icon-square"
+                                    ></span>
+                                    Square
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <div class="control-heading">
+                                <label for="avatar-size">Avatar size</label>
+                                <output id="size-value">160px</output>
+                            </div>
+
+                            <input
+                                type="range"
+                                id="avatar-size"
+                                min="80"
+                                max="240"
+                                value="160"
+                            />
+                        </div>
+
+                        <div class="control-group">
+                            <label for="avatar-position">Image position</label>
+
+                            <select id="avatar-position">
+                                <option value="center">Center</option>
+                                <option value="top">Top</option>
+                                <option value="bottom">Bottom</option>
+                                <option value="left">Left</option>
+                                <option value="right">Right</option>
+                            </select>
+                        </div>
+
+                        <div class="control-group">
+                            <label>Image fit</label>
+
+                            <div class="fit-options">
+                                <button
+                                    class="fit-option active"
+                                    data-fit="cover"
+                                    aria-pressed="true"
+                                >
+                                    Cover
+                                </button>
+
+                                <button
+                                    class="fit-option"
+                                    data-fit="contain"
+                                    aria-pressed="false"
+                                >
+                                    Contain
+                                </button>
+                            </div>
+                        </div>
+
+                        <button class="reset-button" id="reset-playground">
+                            ↺ Reset experiment
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!--=============== PRACTICE ===============-->
+            <section class="section practice-section" id="practice">
+                <div class="practice-content">
+                    <span class="section-label">03 — YOUR TURN</span>
+
+                    <h2>Ready to create<br /><em>your first avatar?</em></h2>
+
+                    <p>
+                        Apply what you've learned and build a reusable profile
+                        avatar using HTML and CSS.
+                    </p>
+
+                    <ul class="practice-list">
+                        <li>Create an image inside an avatar container.</li>
+                        <li>Make the container perfectly circular.</li>
+                        <li>Crop the image without distorting it.</li>
+                        <li>Experiment with image positioning.</li>
+                    </ul>
+
+                    <a href="#playground" class="button button-light">
+                        Experiment again
+                        <span aria-hidden="true">↗</span>
+                    </a>
+                </div>
+
+                <div class="practice-decoration" aria-hidden="true">
+                    <div class="decoration-circle circle-a"></div>
+                    <div class="decoration-circle circle-b"></div>
+                    <div class="decoration-circle circle-c"></div>
+                </div>
+            </section>
+        </main>
+
+        <!--=============== FOOTER ===============-->
+        <footer class="footer">
+            <a href="#" class="logo">
+                <span class="logo-mark">C</span>
+                <span class="logo-text">circle studio</span>
+            </a>
+
+            <p>Learning frontend, one detail at a time.</p>
+
+            <span class="footer-number">SCHOOL / 011</span>
+        </footer>
+
+        <script src="./assets/js/main.js" defer></script>
+    </body>
 </html>
